@@ -1,15 +1,9 @@
+var cx1, cy1, xspeed1, yspeed1;
+var cx2, cy2, xspeed2, yspeed2;
+var rectHeight, rectWidth;
+
 function setup() {
-  // put setup code here
-}
-
-function draw() {
-  // put drawing code here
-}int cx1, cy1, xspeed1, yspeed1;
-int cx2, cy2, xspeed2, yspeed2;
-int rectHeight, rectWidth;
-
-void setup() {
-  size(550, 400);
+  createCanvas(550, 400);
   fill(255);
   background(0);
 
@@ -32,7 +26,7 @@ void setup() {
   yspeed2= checkIfZero(yspeed2);
 }
 
-void draw() {
+function draw() {
   background(0);
   
   rect(cx1, cy1, rectWidth, rectHeight);
@@ -47,7 +41,7 @@ void draw() {
   cy2+=yspeed2;
 }
 
-void checkSides1(int x, int y) {
+function checkSides1(x, y) {
   if (x<=0 || x>=width-rectWidth) {
     xspeed1*=-1;
   }
@@ -56,7 +50,7 @@ void checkSides1(int x, int y) {
   }
 }
 
-void checkSides2(int x, int y) {
+function checkSides2(x, y) {
   if (x<=0 || x>=width-rectWidth) {
     xspeed2*=-1;
   }
@@ -65,7 +59,7 @@ void checkSides2(int x, int y) {
   }
 }
 
-int checkIfZero(int i){
+function checkIfZero(i){
   if(i==0){
     i=5;
   }
